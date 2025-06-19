@@ -1,0 +1,111 @@
+/* ---- RESET BÁSICO Y ESTILOS GENERALES ---- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff; /* Fondo blanco puro */
+    color: #333333; /* Color de texto principal oscuro */
+    /* Eliminamos el centrado vertical forzado para permitir el flujo natural */
+    padding: 3rem 20px; /* Añadimos padding vertical y horizontal al body */
+}
+
+/* ---- CONTENEDOR PRINCIPAL ---- */
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    text-align: center;
+}
+
+/* ---- LOGO ---- */
+.logo {
+    max-width: 450px;
+    width: 90%;
+    margin-bottom: 2rem; /* Espacio debajo del logo (ligeramente reducido) */
+}
+
+/* ---- MENSAJES PRINCIPALES ---- */
+.main-message h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.main-message p {
+    font-family: 'Anton', sans-serif;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 2.5rem; /* Espacio antes de los carteles (ligeramente reducido) */
+}
+
+/* ---- SECCIÓN DE CARTELES ---- */
+.posters-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Espacio entre los carteles (ligeramente reducido) */
+}
+
+.poster-card {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.poster-card:hover {
+    transform: scale(1.05);
+}
+
+.poster-card a {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.poster-card img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.poster-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+/* ---- AJUSTES PARA DISPOSITIVOS MÓVILES (RESPONSIVE) ---- */
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 15px; /* Menos padding en móviles */
+    }
+
+    .main-message h1 {
+        font-size: 2rem;
+    }
+
+    .main-message p {
+        font-size: 1.5rem;
+    }
+    
+    .posters-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .poster-card {
+        width: 80%;
+        max-width: 300px;
+    }
+}
