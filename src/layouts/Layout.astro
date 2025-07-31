@@ -1,0 +1,49 @@
+---
+// src/layouts/Layout.astro
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Proyecto #PonleCorrea. Pasear perros sin correa es un riesgo. Descarga el cartel y difunde el mensaje para salvar vidas.">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/images/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+        <link rel="stylesheet" href="/src/styles/global.css">
+	</head>
+	<body>
+		<slot />
+
+        <!-- CAMBIO 3: AÑADIMOS EL BOTÓN PARA VOLVER ARRIBA -->
+        <a href="#inicio" id="back-to-top-btn" aria-label="Volver arriba">
+            <!-- Usamos un SVG para la flecha, es más nítido que una letra -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+        </a>
+
+        <script>
+            // Script para mostrar/ocultar el botón de "volver arriba"
+            const backToTopButton = document.querySelector("#back-to-top-btn");
+
+            window.addEventListener("scroll", () => {
+                // Si el scroll vertical es mayor a 400px, muestra el botón. Si no, lo oculta.
+                if (backToTopButton) {
+                    if (window.scrollY > 400) {
+                        backToTopButton.classList.add("visible");
+                    } else {
+                        backToTopButton.classList.remove("visible");
+                    }
+                }
+            });
+        </script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+---
+// src/components/Hero.astro
+---
+<!-- 
+    La sección #inicio ahora obtiene su imagen de fondo directamente desde el CSS.
+    Solo dejamos el contenido que va por encima: el logo y el menú.
+-->
+<section id="inicio" class="section-wrapper">
+    <div class="section-content">
+        <!-- Logo principal de la campaña -->
+        <img src="/images/logo.png" alt="Logo Ponle Correa" class="hero-logo">
+
+        <!-- Menú de navegación -->
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#informacion">Información</a></li>
+                <li><a href="#proyecto">Proyecto</a></li>
+                <li><a href="#redes">Redes</a></li>
+                <li><a href="#apoya">Apoya</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <!-- YA NO NECESITAMOS LA IMAGEN AQUÍ -->
+    </div>
+</section>

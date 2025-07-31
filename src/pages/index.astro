@@ -1,0 +1,27 @@
+---
+// src/pages/index.astro
+
+// Importamos el Layout y todos los componentes que usaremos
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Informacion from '../components/Informacion.astro'; // Nuevo componente
+import Proyecto from '../components/Proyecto.astro';
+import Redes from '../components/Redes.astro';
+import Apoya from '../components/Apoya.astro';
+import Contacto from '../components/Contacto.astro';
+import Footer from '../components/Footer.astro';
+
+// No necesitamos importar Header.astro porque ya no existe
+---
+
+<Layout title="Ponle Correa - Salva Vidas">
+	<main>
+		<Hero />
+		<Informacion />
+		<Proyecto />
+		<Redes />
+		<Apoya />
+		<Contacto />
+	</main>
+	<Footer />
+</Layout>
