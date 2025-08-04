@@ -1,21 +1,17 @@
 /* src/styles/global.css */
 
-/* ---- NUEVA FUENTE DE GOOGLE: League Spartan ---- */
+/* ---- FUENTES DE GOOGLE ---- */
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700;800&display=swap');
 
-/* ---- VARIABLES Y RESET BÁSICO CON NUEVOS VALORES ---- */
+/* ---- VARIABLES Y RESET BÁSICO ---- */
 :root {
-  /* Nuevos Colores */
-  --color-principal: #d15f58; /* Rojo */
-  --color-verde-fondo: #9bc499; /* Verde */
-  --color-azul-acento: #7bcbf2; /* Azul (disponible si se necesita) */
-  
+  --color-principal: #d15f58;
+  --color-verde-fondo: #9bc499;
+  --color-azul-acento: #7bcbf2;
   --color-texto: #333333;
   --color-fondo: #FFFFFF;
   --color-negro: #000000;
   --color-footer-bg: #222222;
-  
-  /* Nueva Tipografía */
   --fuente-principal: 'League Spartan', sans-serif;
 }
 
@@ -27,7 +23,7 @@
 }
 
 body {
-    font-family: var(--fuente-principal); /* Aplicamos la nueva fuente a todo el cuerpo */
+    font-family: var(--fuente-principal);
     background-color: var(--color-fondo);
     color: var(--color-texto);
     text-align: center;
@@ -39,20 +35,31 @@ img {
     display: block;
 }
 
+/* Estilo para los nuevos enlaces en el texto */
+.text-link {
+    color: var(--color-principal);
+    font-weight: 700;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+.text-link:hover {
+    opacity: 0.8;
+}
+
 /* ---- TÍTULOS Y TEXTOS CON NUEVOS TAMAÑOS ---- */
 h2, .section-title, .apoya-titulo, .contacto-titulo {
-    font-size: 3.5rem; /* Equivalente web para 70pt */
-    font-weight: 800; /* ExtraBold */
+    font-size: 3.5rem;
+    font-weight: 800;
 }
 
 p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
-    font-size: 1.2rem; /* Equivalente web para 30pt. Más grande que antes. */
+    font-size: 1.2rem;
     line-height: 1.6;
-    font-weight: 400; /* Regular */
+    font-weight: 400;
 }
 
 .info-text .highlight, .poster-card h3 {
-    font-weight: 700; /* Bold */
+    font-weight: 700;
 }
 
 /* ---- CONTENEDOR GENÉRICO DE SECCIÓN ---- */
@@ -68,15 +75,15 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
     max-width: 1100px;
 }
 
-/* ---- SECCIÓN DE INICIO ---- */
+/* ---- SECCIÓN DE INICIO CON MEDIDAS FINALES ---- */
 #inicio {
     padding: 2.5rem;
-    min-height: 129vh;
+    min-height: 129vh; /* Valor final que te funcionó */
     width: 100%;
     
     background-image: url('/images/fondo1.png');
     background-size: 100% auto;
-    background-position: center bottom;
+    background-position: center bottom; 
     background-repeat: no-repeat;
     background-color: var(--color-fondo); 
     
@@ -84,9 +91,7 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
     align-items: flex-start; 
     justify-content: center; 
 }
-#inicio .section-content {
-    max-width: 1100px;
-}
+#inicio .section-content { max-width: 1100px; }
 .hero-logo { max-width: 450px; margin: 0 auto 1.5rem auto; }
 .hero-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 0; }
 .hero-nav a { text-decoration: none; color: var(--color-texto); font-weight: 700; font-size: 1rem; text-transform: uppercase; transition: color 0.3s ease; }
@@ -95,23 +100,23 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
 
 /* ---- SECCIÓN DE INFORMACIÓN ---- */
 #informacion {
-    background-image: url('/images/fondo2.png'); /* Esta imagen ya tiene el verde correcto */
+    background-image: url('/images/fondo2.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     color: var(--color-texto);
 }
-.info-text .irresponsible {
-    font-weight: 800;
-    font-size: 1.8rem;
-    margin-top: 2rem;
-}
+.info-text .irresponsible { font-weight: 800; font-size: 1.8rem; margin-top: 2rem; }
 
 /* ---- SECCIÓN 3: PROYECTO ---- */
 #proyecto { background-color: var(--color-fondo); }
 .proyecto-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; text-align: left; align-items: center; }
 .proyecto-imagen img { border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-.proyecto-texto h2 { text-align: left; } /* Alineamos el título del proyecto a la izquierda */
+.proyecto-texto h2 { 
+    text-align: left;
+    /* CAMBIO 2: Aumentamos el espacio inferior del título */
+    margin-bottom: 2.5rem;
+}
 .proyecto-texto p { text-align: left; }
 
 /* ---- SECCIÓN 4: REDES SOCIALES ---- */
@@ -127,6 +132,8 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
 /* ---- SECCIÓN 5: APOYA LA CAUSA ---- */
 #apoya { background-color: var(--color-principal); color: var(--color-fondo); }
 #apoya h2, #apoya h3, #apoya p { color: var(--color-fondo); }
+/* CAMBIO 2: Aumentamos el espacio inferior del párrafo de introducción */
+#apoya .section-content > p { margin-bottom: 4rem; }
 .posters-section { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
 .poster-card { width: 250px; }
 .poster-card a { display: block; margin-bottom: 1rem; transition: transform 0.3s ease; }
@@ -135,9 +142,8 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
 
 
 /* ---- SECCIÓN 6: CONTACTO ---- */
-#contacto { background-color: #f9f9f9; } /* Un fondo ligero para separar la sección */
-#contacto .form-container { min-height: 500px; /* Damos altura para que el form de Jotform quepa */ }
-/* .contact-form { Este estilo ya no se usa, lo dejamos por si acaso } */
+#contacto { background-color: #f9f9f9; }
+#contacto .form-container { min-height: 500px; }
 
 
 /* ---- SECCIÓN 7: FOOTER ---- */
@@ -150,7 +156,7 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
 /* ---- BOTÓN DE VOLVER ARRIBA ---- */
 #back-to-top-btn { position: fixed; bottom: 20px; right: 20px; background-color: var(--color-principal); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1000; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; }
 #back-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-#back-to-top-btn:hover { background-color: #a74b45; } /* Rojo oscurecido */
+#back-to-top-btn:hover { background-color: #a74b45; }
 
 
 /* ---- AJUSTES RESPONSIVE ---- */
