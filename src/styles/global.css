@@ -173,8 +173,8 @@ p, .info-text, #apoya .section-content > p, .contacto-intro, .poster-card h3 {
     
     /* ---- SOLUCIÓN 1: SECCIÓN DE INICIO PARA MÓVIL ---- */
     #inicio {
-        min-height: 85vh; /* Reducimos la altura para que no sea tan larga */
-        background-size: 110% auto; /* Hacemos la imagen un poco más grande para llenar el espacio */
+        min-height: 70vh; /* Reducimos la altura para que no sea tan larga */
+        background-size: 115% auto; /* Hacemos la imagen un poco más grande para llenar el espacio */
         background-position: center 100%; /* La anclamos abajo pero un poquito más al centro */
         padding: 1.5rem; /* Reducimos el padding general */
     }
